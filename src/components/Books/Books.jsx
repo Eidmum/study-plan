@@ -21,7 +21,7 @@ const Books = () => {
                 <span className='title'>Study Plan App</span>
              </h2>
              <h4 className='subtitle'>Select Today's Study Plan</h4>
-             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-5">
                     {books.map( (book)=><Book key={book.id} book={book}></Book>)}
              </div>
         </div>

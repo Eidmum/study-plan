@@ -1,3 +1,9 @@
+.card{
+    box-shadow: 0 0 10px grey;
+}
+
 .image{
     height: 200px;
+    padding: 20px;
+    
 }
