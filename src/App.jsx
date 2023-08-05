@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Books from './components/Books/Books'
 import Profile from './components/Profile/Profile'
+import Questions from './Questions/Questions';
 
 function App() {
   const [time,setTime]=useState(0);
@@ -18,6 +19,9 @@ function App() {
             <Profile time={time}></Profile>
           </div>
           
+      </div>
+      <div className='container'>
+          <Questions></Questions>
       </div>
 
      

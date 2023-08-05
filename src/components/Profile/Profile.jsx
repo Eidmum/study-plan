@@ -29,7 +29,7 @@ const Profile = ({time}) => {
                     <img className='profile-image' src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" />
                 </div>
                 <div className='information'>
-                    <h6>Zahid Hossain</h6>
+                    <h6>Zunead Abedin</h6>
                     <h6><FontAwesomeIcon className='icon' icon={faLocationDot} />
                     Sydney, Australia</h6>
                 </div>
