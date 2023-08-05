@@ -2,8 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import "./Profile.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { addToLocalStorage, getFromLocalStorage } from '../../utilities/fakedb';
+
 const Profile = ({time}) => {
+    function activityCompleted(){
+        toast("All reading completed");
+    }
+    
     const [breakTime,setBreakTime]=useState(0);
     const showBreak= (t)=>{
         setBreakTime(t);
@@ -74,8 +81,9 @@ const Profile = ({time}) => {
             </div>
 
             <div className="d-grid gap-2 mt-3 mt-3 pb-5">
-                <button className="btn btn-primary" type="button">Button</button>
+                <button onClick={()=>activityCompleted()} className="btn btn-primary" type="button">Button</button>
             </div>
+            <ToastContainer />
         </div>
     );
 };
