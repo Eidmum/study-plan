@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import "./Profile.css"
+import { addToLocalStorage, getFromLocalStorage } from '../../utilities/fakedb';
 const Profile = ({time}) => {
     const [breakTime,setBreakTime]=useState(0);
-    const showBreak= (t)=>setBreakTime(t);
+    const showBreak= (t)=>{
+        setBreakTime(t);
+        addToLocalStorage(t);
+
+    
+    };
+    useEffect(()=>{
+        const breakTimeInLocalStorage=getFromLocalStorage();
+        setBreakTime(breakTimeInLocalStorage);
+    },[]);
     return (
         <div className='container profile-information'>
             <div className='d-flex'>
