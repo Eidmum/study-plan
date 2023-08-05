@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import "./Profile.css"
 const Profile = ({time}) => {
+    const [breakTime,setBreakTime]=useState(0);
+    const showBreak= (t)=>setBreakTime(t);
     return (
         <div className='container profile-information'>
             <div className='d-flex'>
@@ -38,10 +40,10 @@ const Profile = ({time}) => {
                 <h3>Add a break</h3>
                 <div className='break-area mt-3'>
                 
-                    <button className='btn-break btn btn-primary'>10s</button>
-                    <button className='btn-break btn btn-primary'>20s</button>
-                    <button className='btn-break btn btn-primary'>30s</button>
-                    <button className='btn-break btn btn-primary'>40s</button>
+                    <button onClick={()=>{showBreak(10)}} className='btn-break btn btn-primary'>10m</button>
+                    <button onClick={()=>{showBreak(20)}} className='btn-break btn btn-primary'>20m</button>
+                    <button onClick={()=>{showBreak(30)}} className='btn-break btn btn-primary'>30m</button>
+                    <button onClick={()=>{showBreak(40)}} className='btn-break btn btn-primary'>40m</button>
 
                 </div>
 
@@ -57,7 +59,7 @@ const Profile = ({time}) => {
                 <h3>Break Details</h3>
                 <div className='break-area mt-3 d-flex justify-content-between'>
                     <h4>Breaking Time</h4>
-                    <h4>200 Minutes</h4>
+                    <h4> {breakTime} Minutes</h4>
                 </div>
             </div>
 
