@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import "./Profile.css"
-const Profile = () => {
+const Profile = ({time}) => {
     return (
         <div className='container profile-information'>
             <div className='d-flex'>
@@ -50,7 +50,7 @@ const Profile = () => {
                 <h3>Reading Details</h3>
                 <div className='reading-area mt-3 d-flex justify-content-between'>
                     <h4>Reading Time</h4>
-                    <h4>200 Minutes</h4>
+                    <h4>{time} Minutes</h4>
                 </div>
             </div>
             <div className='break mt-5'>

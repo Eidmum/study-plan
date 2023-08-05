@@ -1,8 +1,8 @@
 import React from 'react';
 import "./Book.css"
 const Book = (props) => {
-    console.log(props);
     const {id,name,photo,time,description,age}=props.book;
+    const {addedTime}=props;
     return (
         <div className='col'>
             <div className="card h-100">
@@ -13,7 +13,7 @@ const Book = (props) => {
                     <h6>For Age : {age}</h6>
                     <h6>Time required : {time} Minutes</h6>
                     <div className="d-grid gap-2 mt-3">
-                        <button className="btn btn-primary" type="button">Button</button>
+                        <button onClick={()=>addedTime(time)} className="btn btn-primary" type="button">Button</button>
                     
                     </div>
                 </div>
